@@ -114,7 +114,7 @@ fun MonthItemOneColumn(
         }) {
         Text(
             text = monthText,
-            fontSize = if (month.name == selectedMonth) 35.sp else 30.sp,
+            fontSize = if (month.name == selectedMonth) 25.sp else 25.sp,
             color = if (enabled && month.name == selectedMonth) themeColor
             else if (enabled) unselectedColor
             else Color.Gray

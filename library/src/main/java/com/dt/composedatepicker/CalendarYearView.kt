@@ -40,7 +40,7 @@ fun CalendarYearView(
     ) {
         items(years) { year ->
             Text(text = year.toString(),
-                fontSize = if (year == selectedYear) 35.sp else 30.sp,
+                fontSize = if (year == selectedYear) 25.sp else 25.sp,
                 color = if (year == selectedYear) themeColor else Color.Black,
                 modifier = Modifier
                     .padding(vertical = 10.dp)

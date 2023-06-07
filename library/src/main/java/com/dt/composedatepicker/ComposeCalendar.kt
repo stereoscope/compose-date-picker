@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -22,7 +23,7 @@ fun ComposeCalendar(
     title: String = "",
     listener: SelectDateListener,
     calendarType: CalendarType = CalendarType.MONTH_AND_YEAR,
-    themeColor: Color = Color(0xFF614FF0),
+    themeColor: Color = MaterialTheme.colors.primaryVariant,
     unselectedColor: Color = Color.Black,
     negativeButtonTitle: String = "CANCEL",
     positiveButtonTitle: String = "OK",
@@ -114,8 +115,7 @@ fun ComposeCalendar(
     }
 
     Card(
-        modifier = Modifier
-            .fillMaxSize(),
+        modifier = Modifier.fillMaxSize(),
         shape = RoundedCornerShape(16.dp)
     ) {
         Column(modifier = Modifier.fillMaxSize()) {

@@ -40,10 +40,10 @@ fun CalendarHeader(
             if (calendarType != CalendarType.ONLY_YEAR) {
                 Text(
                     text = monthText,
-                    fontSize = 35.sp,
+                    fontSize = 25.sp,
                     modifier = Modifier
                         .padding(bottom = 20.dp,
-                            start = if (calendarType == CalendarType.ONLY_MONTH) 0.dp else 30.dp,
+                            start = if (calendarType == CalendarType.ONLY_MONTH) 0.dp else 25.dp,
                             end = if (calendarType == CalendarType.ONLY_MONTH) 0.dp else 10.dp)
                         .clickable { setShowMonths(true) },
                     color = if (calendarType == CalendarType.ONE_SCREEN_MONTH_AND_YEAR){
@@ -53,15 +53,15 @@ fun CalendarHeader(
                     })
             }
             if (calendarType != CalendarType.ONLY_MONTH && calendarType != CalendarType.ONLY_YEAR){
-                Text(text = "/",fontSize = 35.sp,color = Color.White)
+                Text(text = "/",fontSize = 25.sp,color = Color.White)
             }
             if (calendarType != CalendarType.ONLY_MONTH ) {
                 Text(text = selectedYear.toString(),
-                    fontSize = 35.sp,
+                    fontSize = 25.sp,
                     modifier = Modifier
                         .padding(bottom = 20.dp,
                             start = if (calendarType == CalendarType.ONLY_YEAR) 0.dp else 10.dp,
-                            end = if (calendarType == CalendarType.ONLY_YEAR) 0.dp else 30.dp)
+                            end = if (calendarType == CalendarType.ONLY_YEAR) 0.dp else 25.dp)
                         .clickable { setShowMonths(false) },
                     color =  if (calendarType == CalendarType.ONE_SCREEN_MONTH_AND_YEAR){
                         Color.White
