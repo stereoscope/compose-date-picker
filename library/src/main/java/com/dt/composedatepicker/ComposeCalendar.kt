@@ -16,6 +16,7 @@ import java.util.*
 
 @Composable
 fun ComposeCalendar(
+    modifier: Modifier = Modifier,
     minDate: Date? = null,
     maxDate: Date? = null,
     initialDate: Date? = null,
@@ -28,7 +29,9 @@ fun ComposeCalendar(
     negativeButtonTitle: String = "CANCEL",
     positiveButtonTitle: String = "OK",
     buttonTextSize: TextUnit = TextUnit.Unspecified,
-    monthViewType: MonthViewType? = MonthViewType.ONLY_MONTH
+    monthViewType: MonthViewType? = MonthViewType.ONLY_MONTH,
+    content: (@Composable () -> Unit)? = null,
+    columnHeight: Float = 0.85f,
 ) {
 
     var minYear = 1970
@@ -115,10 +118,10 @@ fun ComposeCalendar(
     }
 
     Card(
-        modifier = Modifier.fillMaxSize(),
+        modifier = modifier,
         shape = RoundedCornerShape(16.dp)
     ) {
-        Column(modifier = Modifier.fillMaxSize()) {
+        Column(modifier = modifier) {
             CalendarHeader(
                 selectedMonth = selectedMonth,
                 selectedYear = selectedYear,
@@ -144,7 +147,8 @@ fun ComposeCalendar(
                     themeColor = themeColor,
                     unselectedColor = unselectedColor,
                     setYear = setYear,
-                    monthViewType = monthViewType
+                    monthViewType = monthViewType,
+                    columnHeight = columnHeight
                 )
             } else {
                 Crossfade(targetState = showMonths) {
@@ -194,6 +198,7 @@ fun ComposeCalendar(
                     }
                 }
             }
+            content?.let { it() }
             CalendarBottom(
                 onPositiveClick = { listener.onDateSelected(selectedDate) },
                 onCancelClick = { listener.onCanceled() },

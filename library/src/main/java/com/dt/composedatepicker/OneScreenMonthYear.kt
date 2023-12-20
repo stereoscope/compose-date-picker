@@ -25,6 +25,7 @@ fun OneScreenMonthYear(
     unselectedColor: Color,
     setYear: (Int) -> Unit,
     monthViewType: MonthViewType?,
+    columnHeight: Float
 ) {
     Row() {
         CalendarMonthViewOneColumn(
@@ -41,7 +42,7 @@ fun OneScreenMonthYear(
             themeColor = themeColor,
             unselectedColor = unselectedColor,
             modifier = Modifier
-                .fillMaxHeight(0.85f)
+                .fillMaxHeight(columnHeight)
                 .fillMaxWidth(0.5f)
                 .padding(vertical = 10.dp),
             monthViewType = monthViewType,
@@ -51,7 +52,8 @@ fun OneScreenMonthYear(
             setYear = setYear,
             minYear = minYear,
             maxYear = maxYear,
-            themeColor = themeColor
+            themeColor = themeColor,
+            columnHeight = columnHeight
         )
     }
 }

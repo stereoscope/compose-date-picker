@@ -23,7 +23,8 @@ fun CalendarYearView(
     setYear: (Int) -> Unit,
     minYear: Int,
     maxYear: Int,
-    themeColor: Color
+    themeColor: Color,
+    columnHeight: Float = .85f
 ) {
     val years = IntRange(minYear, maxYear).toList()
     val listState = rememberLazyListState()
@@ -33,7 +34,7 @@ fun CalendarYearView(
     LazyColumn(
         state = listState,
         modifier = Modifier
-            .fillMaxHeight(0.85f)
+            .fillMaxHeight(columnHeight)
             .fillMaxWidth()
             .padding(10.dp),
         horizontalAlignment = Alignment.CenterHorizontally
