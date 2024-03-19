@@ -1,6 +1,6 @@
 package com.dt.composedatepicker
 
-import java.util.*
+import java.util.Date
 
 interface SelectDateListener {
     fun onDateSelected(date: Date)
